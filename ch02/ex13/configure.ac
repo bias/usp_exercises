@@ -1,10 +1,11 @@
-UTOMAKE_OPTS = gnu
-bin_PROGRAMS = hungryhacker
+AC_INIT([ex12], [0.1])
 
-hungryhacker_SOURCES = hacker.c
-hungryhacker_LDADD = ../libdinner/libdinner.la
-INCLUDES = -I../libdinner
+AC_CONFIG_AUX_DIR([.])
 
-man_MANS = hungryhacker.1
+AM_INIT_AUTOMAKE
 
-EXTRA_DIST = sample.sh hungryhacker.1
+AC_PROG_CC
+AC_PROG_LIBTOOL
+
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT

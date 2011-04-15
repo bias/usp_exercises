@@ -1,17 +1,14 @@
-C_INIT(hacker.c)
-AM_INIT_AUTOMAKE(hungryhacker,0.0.1)
-AM_CONFIG_HEADER(config.h)
-AM_PROG_LIBTOOL
+## Non GNU complient  project
+AUTOMAKE_OPTIONS = foreign
 
-AC_PROG_INSTALL
-AC_PROG_MAKE_SET
+lib_LTLIBRARIES = liblog.la
 
-AC_PROG_CC
-AC_LANG_C
+liblog_la_SOURCES = liblog.c
 
-AC_HEADER_STDC
+include_HEADERS = log.h
 
-AC_CHECK_HEADERS(assert.h errno.h unistd.h time.h,,AC_MSG_ERROR([
-required header missing]))
+liblog_la_LDFLAGS = -version-info 0:0:0
 
-AC_OUTPUT(Makefile)
+bin_PROGRAMS = test
+test_SOURCES = test.c
+test_LDADD = liblog.la

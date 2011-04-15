@@ -4,7 +4,7 @@
 
 typedef struct list_struct {
   data_t item;
-  struct list+struct *next;
+  struct list_struct *next;
 } log_t;
 
 static log_t *headptr = NULL;
