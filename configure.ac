@@ -1,8 +1,11 @@
 AC_INIT([usp_exercises], [0.1])
+
 AC_CONFIG_AUX_DIR([.])
+AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_SUBDIRS([ch02])
+
 AC_OUTPUT

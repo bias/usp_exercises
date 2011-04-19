@@ -17,6 +17,11 @@
 #
 # autotools
 
+compile
+depcomp
+install-sh
+missing
+
 # aclocal
 aclocal.m4
 
@@ -24,12 +29,16 @@ aclocal.m4
 Makefile
 Makefile.in
 
-autom4te.cache
-compile
+# configure
 configure
-depcomp
-install-sh
-missing
+config.log
+config.status
+config.sub
+config.guess
+
+# m4
+m4
+autom4te.cache
 
 # libtool
 .deps
@@ -37,8 +46,6 @@ missing
 libtool
 ltmain.sh
 
-# configure
-config.log
-config.status
-config.sub
-config.guess
+# autoheader
+config.h*
+stamp-h*
