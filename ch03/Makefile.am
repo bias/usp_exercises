@@ -2,4 +2,4 @@
 AUTOMAKE_OPTIONS = foreign
 
 ## Project subdirectories
-SUBDIRS = ex08 ex09 
+SUBDIRS = process-chains process-fans 

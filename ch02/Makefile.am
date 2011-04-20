@@ -2,4 +2,4 @@
 AUTOMAKE_OPTIONS = foreign
 
 ## Project subdirectories
-SUBDIRS = ex12 ex13 
+SUBDIRS = env-utility message-logging 

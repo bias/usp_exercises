@@ -1,11 +1,8 @@
-AC_INIT([ex12], [0.1])
+AC_INIT([env-utility], [0.1])
 
 AC_CONFIG_AUX_DIR([.])
-AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE
-
-LT_INIT
 
 AC_PROG_CC
 
