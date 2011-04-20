@@ -1,8 +1,6 @@
 ## Non GNU complient  project
 AUTOMAKE_OPTIONS = foreign
 
-ACLOCAL_AMFLAGS = -I m4
-
 lib_LTLIBRARIES = liblog.la
 
 liblog_la_SOURCES = log.c
