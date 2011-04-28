@@ -20,7 +20,7 @@ int addmsg(data_t data) {
   int nodesize;
 
   nodesize = sizeof(log_t) + strlen(data.string) + 1;
-  if ((newnode = (log_t *)(malloc(nodesize))) == NULL) 
+  if ( (newnode = (log_t *) malloc(nodesize)) == NULL ) 
     return -1;
   newnode->item.time = data.time;
   newnode->item.string = (char *)newnode + sizeof(log_t);
@@ -42,6 +42,7 @@ void clearlog(void) {
     free(travptr);
   }
   free(headptr);
+  headptr = NULL;
 }
 
 char *getlog(void) { 
@@ -53,12 +54,13 @@ char *getlog(void) {
   strsize = 0;
   travptr = headptr;
   while ( travptr != NULL ) {
-    /* count char plus 2 bytes for newline */
-    strsize += strlen( travptr->item.string ) + 2;
+    /* count char plus 1 bytes for newline */
+    strsize += strlen( travptr->item.string ) + 1;
     travptr = travptr->next;
   }
 
-  wholelog = malloc(strsize + 1);
+  if ( (wholelog = (char *) malloc(strsize + 1)) == NULL )
+	  return NULL;
   travptr = headptr;
   while ( travptr != NULL ) {
     if ( travptr == headptr )
