@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "log.h"
+#include <custom.h>
+
+#include <log.h>
 
 #define TRAV_INIT_SIZE 8
 
@@ -20,7 +22,7 @@ int addmsg(data_t data) {
   int nodesize;
 
   nodesize = sizeof(log_t) + strlen(data.string) + 1;
-  if ( (newnode = (log_t *) malloc(nodesize)) == NULL ) 
+  if ( (newnode = (log_t *) emalloc(nodesize)) == NULL ) 
     return -1;
   newnode->item.time = data.time;
   newnode->item.string = (char *)newnode + sizeof(log_t);
@@ -59,7 +61,7 @@ char *getlog(void) {
     travptr = travptr->next;
   }
 
-  if ( (wholelog = (char *) malloc(strsize + 1)) == NULL )
+  if ( (wholelog = (char *) emalloc(strsize + 1)) == NULL )
 	  return NULL;
   travptr = headptr;
   while ( travptr != NULL ) {

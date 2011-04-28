@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <custom.h>
+
 /* utility functions */
 void print_env();
 int split_assign(char*, char*, char*);
@@ -88,9 +90,9 @@ void replace_environ(char** argv) {
 
 	/* Allocate memory for new environ */
 	/* XXX we don't check for duplicate vars */
-	environ_new = malloc( sizeof(utilp - headp) );
+	environ_new = emalloc( sizeof(utilp - headp) );
 	for (i=0; i< utilp - headp; i++) {
-		environ_new[i] = malloc( sizeof(argv[i+offset]) );
+		environ_new[i] = emalloc( sizeof(argv[i+offset]) );
 		environ_new[i] = argv[i+offset];
 	}
 	environ = environ_new;
@@ -99,7 +101,7 @@ void replace_environ(char** argv) {
 	/* If utility was specified, concat it with args and run it */
 	/* Otherwise, print env */
 	if (utilp != NULL) {
-		util = malloc( sizeof(tailp - utilp) + sizeof(char) * (tailp-utilp) );
+		util = emalloc( sizeof(tailp - utilp) + sizeof(char) * (tailp-utilp) );
 		while ( *utilp != NULL ) {
 			strcat(util, *utilp);
 			strcat(util, " ");
@@ -143,7 +145,7 @@ void append_environ(char** argv) {
 	/* If utility was specified, concat it with args and run it */
 	/* Otherwise, print env */
 	if (utilp != NULL) {
-		util = malloc( sizeof(tailp - utilp) + sizeof(char) * (tailp-utilp) );
+		util = emalloc( sizeof(tailp - utilp) + sizeof(char) * (tailp-utilp) );
 		while ( *utilp != NULL ) {
 			strcat(util, *utilp);
 			strcat(util, " ");
