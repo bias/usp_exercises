@@ -1,4 +1,4 @@
-AC_INIT([ex12], [0.1])
+AC_INIT([message-logging], [0.1])
 
 AC_CONFIG_AUX_DIR([.])
 

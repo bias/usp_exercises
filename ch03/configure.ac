@@ -1,4 +1,4 @@
-AC_INIT([ch03, [0.1])
+AC_INIT([ch03], [0.1])
 
 AC_CONFIG_AUX_DIR([.])
 

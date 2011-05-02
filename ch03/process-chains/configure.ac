@@ -1,4 +1,4 @@
-AC_INIT([env-utility], [0.1])
+AC_INIT([process-chains], [0.1])
 
 AC_CONFIG_AUX_DIR([.])
 

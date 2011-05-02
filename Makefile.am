@@ -2,4 +2,4 @@
 AUTOMAKE_OPTIONS = foreign
 
 ## Project subdirectories
-SUBDIRS = common ch02 
+SUBDIRS = common ch02 ch03
