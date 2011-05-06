@@ -5,5 +5,6 @@ AM_CPPFLAGS = -ansi -pedantic -Wall -Wextra -Wformat=2 -Wfloat-equal -Wundef -Ws
 
 lib_LTLIBRARIES = libcustom.la
 libcustom_la_SOURCES = custom.c
-include_HEADERS = custom.h
 libcustom_la_LDFLAGS = -version-info 0:0:0
+
+include_HEADERS = custom.h
