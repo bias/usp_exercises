@@ -1,0 +1,5 @@
+./testsim 5 10
+./testsim 8 10
+./testsim 4 10
+./testsim 13 6
+./testsim 1 12

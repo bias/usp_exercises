@@ -5,6 +5,9 @@ AM_CPPFLAGS = -ansi -pedantic -Wall -Wextra -Wformat=2 -Wfloat-equal -Wundef -Ws
 
 INCLUDES = -I../../common
 
-bin_PROGRAMS = runsim 
+bin_PROGRAMS = runsim testsim
+
 runsim_SOURCES = runsim.c
 runsim_LDADD = ../../common/libcustom.la
+
+testsim_SOURCES = testsim.c

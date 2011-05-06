@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -18,24 +19,51 @@ int main (int argc, char *argv[]) {
 	}
 	pr_limit = atoi(argv[1]);
 
-	while ( !feof(stdin) ) {
+	/* break on EOF or error */
+	while ( fgets(buf, MAX_CANON, stdin) != NULL ) {
+
 		if ( pr_count == pr_limit )
 			wait(NULL);
-		if ( fgets(buf, MAX_CANON, stdin) == NULL && ferror(stdin) ) {
-			perror("Error reading from stdin"); 
-			return ferror(stdin);
-		}
+
 		switch ( fork() ) {
+
 			case -1:
 				perror("Failed to fork");
 				return 1;
+
 			case  0:
+				/* XXX remove trailing newline */
+				buf[strlen(buf)-1] = '\0';
 				if ( makeargv(buf, delim, &pr_argv) == -1 )
 					perror("Couldn't construct argument array");
-				execvp(pr_argv[0], &pr_argv[0]);
+				execvp(pr_argv[0], pr_argv);
 				perror("Child failed to exec");
+				return 1;
+
+			default:
+				++pr_count;
+				/* Check for any (-1) finished children */
+				switch ( waitpid(-1, NULL, WNOHANG) ) {
+					case -1:
+						perror("Failed to wait");
+						return 1;
+					case  0:
+						/* unfinished children */
+						break;
+					default:
+						--pr_count;
+						break;
+				}
+				break;
 		}
 	}
+	
+	if ( ferror(stdin) ) {
+		perror("Error reading from stdin"); 
+		return ferror(stdin);
+	}
+
+	wait(NULL);
 
 	return 0;
 }
