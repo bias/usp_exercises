@@ -1,11 +1,15 @@
-AC_INIT([usp_exercises], [0.1])
+AC_INIT([atomic-logging], [0.1])
 
 AC_CONFIG_AUX_DIR([.])
 
 AM_INIT_AUTOMAKE
 
+LT_INIT
+
+AC_PROG_CC
+AC_PROG_LIBTOOL
+
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([Makefile])
-AC_CONFIG_SUBDIRS([book common ch02 ch03])
 
 AC_OUTPUT

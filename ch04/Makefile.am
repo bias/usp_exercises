@@ -2,4 +2,4 @@
 AUTOMAKE_OPTIONS = foreign
 
 ## Project subdirectories
-SUBDIRS = book common ch02 ch03 ch04
+SUBDIRS = atomic-logging cat-utility 
