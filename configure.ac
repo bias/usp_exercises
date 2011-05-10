@@ -6,6 +6,6 @@ AM_INIT_AUTOMAKE
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([Makefile])
-AC_CONFIG_SUBDIRS([book common ch02 ch03])
+AC_CONFIG_SUBDIRS([book common ch02 ch03 ch04])
 
 AC_OUTPUT
