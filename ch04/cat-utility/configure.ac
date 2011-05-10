@@ -1,0 +1,15 @@
+AC_INIT([cat-utility], [0.1])
+
+AC_CONFIG_AUX_DIR([.])
+
+AM_INIT_AUTOMAKE
+
+LT_INIT
+
+AC_PROG_CC
+AC_PROG_LIBTOOL
+
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_FILES([Makefile])
+
+AC_OUTPUT
