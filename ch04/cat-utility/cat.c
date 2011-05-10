@@ -6,6 +6,8 @@
 
 #include <custom.h> /* emalloc */
 
+/* XXX apparently BSD doesn't involve environment variables with cat, so I'm skipping that part */
+
 int main(int argc, char *argv[]) {
 	char *buf;
 	char c;
