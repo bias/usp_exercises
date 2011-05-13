@@ -6,7 +6,7 @@
 #include <sys/wait.h>
 #include <limits.h>
 
-#include <custom.h>
+#include <makeargv.h>
 
 int main (int argc, char *argv[]) {
 	char buf[MAX_CANON], delim[] = " \t";
