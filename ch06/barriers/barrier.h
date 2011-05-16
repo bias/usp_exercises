@@ -1,0 +1,1 @@
+int waitatbarrier(char *name);
