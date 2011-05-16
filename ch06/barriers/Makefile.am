@@ -5,10 +5,13 @@ AM_CPPFLAGS = -ansi -pedantic -Wall -Wextra -Wformat=2 -Wfloat-equal -Wundef -Ws
 
 INCLUDES = -I../../common
 
-bin_PROGRAMS = barrier
+bin_PROGRAMS = barrierd test
 
-barrier_SOURCES = barrier.c
-barrier_LDADD = ../../common/libcustom.la
+barrierd_SOURCES = barrierd.c
+barrierd_LDADD = ../../common/libemalloc.la
+
+test_SOURCES = test.c
+test_LDADD = ../../common/libemalloc.la libbarrier.la
 
 lib_LTLIBRARIES = libbarrier.la
 libbarrier_la_SOURCES = barrier.c

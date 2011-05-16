@@ -8,4 +8,4 @@ INCLUDES = -I../../common
 bin_PROGRAMS = newsbiff
 
 newsbiff_SOURCES = newsbiff.c
-newsbiff_LDADD = ../../common/libcustom.la
+newsbiff_LDADD = ../../common/libemalloc.la

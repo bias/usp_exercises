@@ -10,7 +10,7 @@
 #define FOREVER 1
 
 /* I'm skipping 5.32 - 5.35 since they are mostly mundane */
-int main(int argc, char* argv[]) {
+int main() {
 	struct stat statbuf;
 
 	while( FOREVER ) {

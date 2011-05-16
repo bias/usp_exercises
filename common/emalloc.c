@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <custom.h>
+#include <emalloc.h>
 
 void* emalloc(size_t size) {
   void *p;

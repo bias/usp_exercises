@@ -8,4 +8,4 @@ INCLUDES = -I../../common
 bin_PROGRAMS = cat
 
 cat_SOURCES = cat.c
-cat_LDADD = ../../common/libcustom.la
+cat_LDADD = ../../common/libemalloc.la

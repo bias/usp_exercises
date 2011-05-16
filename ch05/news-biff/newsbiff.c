@@ -5,7 +5,7 @@
 #include <time.h>
 #include <sys/stat.h>
 
-#include <custom.h> /* emalloc */
+#include <emalloc.h> /* emalloc */
 
 #define FOREVER 1
 

@@ -8,4 +8,4 @@ INCLUDES = -I../../common
 bin_PROGRAMS = mydu
 
 mydu_SOURCES = mydu.c
-mydu_LDADD = ../../common/libcustom.la
+mydu_LDADD = ../../common/libemalloc.la

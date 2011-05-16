@@ -4,7 +4,7 @@
 #include <unistd.h> /* getopt */
 #include <string.h> /* strcmp */
 
-#include <custom.h> /* emalloc */
+#include <emalloc.h> /* emalloc */
 
 /* XXX apparently BSD doesn't involve environment variables with cat, so I'm skipping that part */
 

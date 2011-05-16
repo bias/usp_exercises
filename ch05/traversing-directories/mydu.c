@@ -4,7 +4,7 @@
 #include <errno.h>
 #include <sys/stat.h>
 
-#include <custom.h>
+#include <emalloc.h>
 
 /* I'm skipping the breadth first apply */
 int depthfirstapply(char *path, int pathfun(char *pathl));

@@ -11,4 +11,4 @@ liblog_la_LDFLAGS = -version-info 0:0:0
 
 bin_PROGRAMS = test
 test_SOURCES = test.c
-test_LDADD = ../../common/libcustom.la liblog.la
+test_LDADD = ../../common/libemalloc.la liblog.la

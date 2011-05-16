@@ -27,10 +27,10 @@ static list *last = NULL;
 */
 
 /* This is the same as write, but restarts if interrupted by a signal */
-static ssize_t my_write(int fd, void *buf, size_t size) {
+static ssize_t my_write(int fd_, void *buf, size_t size) {
    ssize_t bytes;
 
-   while (((bytes = write(fd, buf, size)) == -1) && (errno == EINTR));
+   while (((bytes = write(fd_, buf, size)) == -1) && (errno == EINTR));
    return bytes;
 }        
 
