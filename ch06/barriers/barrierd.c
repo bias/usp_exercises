@@ -11,6 +11,8 @@
 #define FOREVER 1
 #define FIFO_PERMS (S_IRWXU | S_IWGRP | S_IWOTH)
 
+/* I'm going to skip handeling additional barriers */
+
 int main(int argc, char *argv[]) { 
 	char *request_name;
 	char request_s[] = ".request";
