@@ -12,6 +12,7 @@
 #define FIFO_PERMS (S_IRWXU | S_IWGRP | S_IWOTH)
 
 /* I'm going to skip handeling additional barriers */
+/* FIXME this doesn't trap for interupts and close the FIFOs */
 
 int main(int argc, char *argv[]) { 
 	char *request_name;

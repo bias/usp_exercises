@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 
 /* I simply replicated the output of stty */
 /* stty handels the absense of some flags differently so this is surely wrong */
-/* also, there was a descepency for the oflags, and I ommited some flags that weren't on */
+/* also, there was a descrepency for the oflags, and I ommited some flags that weren't on */
 int plain_stty() {
 	struct termios term;
 
@@ -67,7 +67,7 @@ int line_stty() {
 	if ( tcgetattr(STDIN_FILENO, &term) == -1 )
 		return -1;
 	
-	printf("fixme\n");
+	printf("fixme: flags don't work yet\n");
 	
 	return 0;
 }
@@ -78,7 +78,7 @@ int all_stty() {
 	if ( tcgetattr(STDIN_FILENO, &term) == -1 )
 		return -1;
 	
-	printf("fixme\n");
+	printf("fixme: flags don't work yet\n");
 	
 	return 0;
 }
